@@ -1,5 +1,5 @@
-// src/components/ImageSelector.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
 // Función para mezclar aleatoriamente un array
 const shuffleArray = (array) => {
@@ -45,16 +45,27 @@ const ImageSelector = ({ onAnswer, level }) => {
   };
 
   return (
-    <div className="flex justify-center mt-6 space-x-4">
-      {images.map((image) => (
-        <img
-          key={image.id}
-          src={image.src}
-          alt={`Postura ${image.isCorrect ? 'Correcta' : 'Incorrecta'}`}
-          onClick={() => handleClick(image.isCorrect)}
-          className="w-24 h-24 rounded-md shadow-md hover:scale-105 transform cursor-pointer"
-        />
-      ))}
+    <div className="flex flex-col items-center justify-center mt-8 space-y-6">
+      <h2 className="text-2xl font-bold ">Selecciona la postura correcta</h2>
+      <div className="flex justify-center space-x-6">
+        {images.map((image) => (
+          <motion.div
+            key={image.id}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.img
+              src={image.src}
+              alt={`Postura ${image.isCorrect ? 'Correcta' : 'Incorrecta'}`}
+              onClick={() => handleClick(image.isCorrect)}
+              className="w-32 h-32 rounded-lg shadow-lg cursor-pointer transition-all duration-300 ease-in-out transform hover:shadow-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            />
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
