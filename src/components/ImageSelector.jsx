@@ -20,9 +20,9 @@ const ImageSelector = ({ onAnswer, level }) => {
       { id: 6, src: './Incorrect.jpeg', isCorrect: false },
     ],
     3: [
-      { id: 7, src: 'correcta3.png', isCorrect: true },
-      { id: 8, src: 'incorrecta5.png', isCorrect: false },
-      { id: 9, src: 'incorrecta6.png', isCorrect: false },
+      { id: 7, src: './corre1.jpeg', isCorrect: true },
+      { id: 8, src: './incorre.jpeg', isCorrect: false },
+      { id: 9, src: './incorre1.jpeg', isCorrect: false },
     ],
     4: [
       { id: 10, src: 'correcta3.png', isCorrect: true },
